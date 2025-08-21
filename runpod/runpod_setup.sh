@@ -23,7 +23,7 @@ chsh -s /usr/bin/zsh
 cd ..
 
 # 4) Setup github
-echo ./scripts/setup_github.sh "jpl.hughes@btinternet.com" "John Hughes"
+echo ./scripts/setup_github.sh "christineye88@outlook.com" "Christine Ye"
 
 # 5) Install various things Christine needs
 uv run python -m ipykernel install --user --name "venv"

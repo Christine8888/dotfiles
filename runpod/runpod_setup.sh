@@ -34,5 +34,7 @@ cd /workspace/rl-character/safety-tooling
 uv pip install -e .
 uv pip install git+https://github.com/UKGovernmentBEIS/inspect_evals
 uv pip install git+https://github.com/josejg/instruction_following_eval.git
-uv pip install --upgrade openai anthropic
+uv pip install --upgrade openai anthropic transformers
 uv pip install inspect-ai
+# for numba
+uv pip install numpy==2.2

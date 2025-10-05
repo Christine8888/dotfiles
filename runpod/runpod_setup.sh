@@ -7,6 +7,7 @@ sudo apt-get install -y less nano htop ncdu nvtop lsof rsync btop jq
 # 2) Setup virtual environment
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env
+export UV_CACHE_DIR="$HOME/.cache/uv"
 uv python install 3.11
 uv venv
 source .venv/bin/activate

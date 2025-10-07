@@ -9,7 +9,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env
 export UV_CACHE_DIR="$HOME/.cache/uv"
 uv python install 3.11
-uv venv
+uv venv --python 3.11
 source .venv/bin/activate
 uv pip install ipykernel simple-gpu-scheduler # very useful on runpod with multi-GPUs https://pypi.org/project/simple-gpu-scheduler/
 python -m ipykernel install --user --name=venv # so it shows up in jupyter notebooks within vscode

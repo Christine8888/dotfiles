@@ -3,13 +3,14 @@
 #!/bin/bash
 
 # Input arguments
-email=${1:-"jpl.hughes@btinternet.com"}
-name=${2:-"John Hughes"}
+email=${1:-"christineye88@outlook.com"}
+name=${2:-"Christine Ye"}
 github_url=${3:-""}
 
 # 0) Setup git
 git config --global user.email "$email"
 git config --global user.name "$name"
+git config pull.rebase false
 
 # 1) Setup SSH key
 ssh-keygen -t ed25519 -C "$email"

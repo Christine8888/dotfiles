@@ -3,14 +3,6 @@ set -euo pipefail
 USAGE=$(cat <<-END
     Usage: ./install.sh [OPTION]
     Install dotfile dependencies on mac or linux
-
-    OPTIONS:
-        --tmux       install tmux
-        --zsh        install zsh
-        --extras     install extra dependencies
-
-    If OPTIONS are passed they will be installed
-    with apt if on linux or brew if on OSX
 END
 )
 
@@ -45,52 +37,6 @@ case "${operating_system}" in
                 echo "Error: Unsupported operating system ${operating_system}" && exit 1
 esac
 
-# Installing on linux with apt
-if [ $machine == "Linux" ]; then
-    DOT_DIR=$(dirname $(realpath $0))
-    apt-get update -y
-    [ $zsh == true ] && apt-get install -y zsh
-    [ $tmux == true ] && apt-get install -y tmux
-    apt-get install -y less nano htop ncdu nvtop lsof rsync jq vim
-    curl -LsSf https://astral.sh/uv/install.sh | sh
-    
-    if [ $extras == true ]; then
-        apt-get install -y ripgrep
-
-        yes | curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | /bin/bash
-        yes | brew install dust jless
-
-        yes | curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-        . "$HOME/.cargo/env" 
-        yes | cargo install code2prompt
-        yes | brew install peco
-
-        apt-get install -y npm
-        yes | npm i -g shell-ask
-    fi
-
-# Installing on mac with homebrew
-elif [ $machine == "Mac" ]; then
-    yes | brew install coreutils ncdu htop ncdu rsync btop jq  # Mac won't have realpath before coreutils installed
-    curl -LsSf https://astral.sh/uv/install.sh | sh
-
-    if [ $extras == true ]; then
-        yes | brew install ripgrep dust jless
-
-        yes | curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-        . "$HOME/.cargo/env" 
-        yes | cargo install code2prompt
-        yes | brew install peco
-    fi
-
-    DOT_DIR=$(dirname $(realpath $0))
-    [ $zsh == true ] && yes | brew install zsh
-    [ $tmux == true ] && yes | brew install tmux
-    defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
-    defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
-    defaults write -g com.apple.mouse.scaling 5.0
-    defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-fi
 
 # Setting up oh my zsh and oh my zsh plugins
 ZSH=~/.oh-my-zsh

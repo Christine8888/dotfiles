@@ -60,4 +60,5 @@ if command -v ask-sh &> /dev/null; then
   eval "$(ask-sh --init)"
 fi
 
-cat $CONFIG_DIR/start.txt
+# No shoggoth for me
+# cat $CONFIG_DIR/start.txt

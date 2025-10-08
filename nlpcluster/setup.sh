@@ -1,6 +1,7 @@
 #!/bin/bash
 
 SCR=/scr-ssd/cye
+cd $SCR
 
 export UV_CACHE_DIR="$SCR/.cache/uv"
 uv python install 3.11

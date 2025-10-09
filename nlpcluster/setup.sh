@@ -10,8 +10,8 @@ source .venv/bin/activate
 
 uv pip install dotenv trl transformers torch "huggingface_hub[cli]" wandb dotenv deepspeed
 uv pip install vllm --torch-backend=auto
-export HF_HOME="$NLP/.cache/huggingface"
-cd $NLP/emergent-doordash
+export HF_HOME="$SPHINX/.cache/huggingface"
+cd $SPHINX/emergent-doordash
 uv pip install -e .
 uv pip install inspect-ai
 uv pip install --upgrade openai anthropic transformers

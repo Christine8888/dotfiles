@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCR=/scr-ssd/cye
+export SCR=/scr-ssd/cye
 mkdir -p $SCR
 cd $SCR
 

@@ -29,6 +29,6 @@ echo ./scripts/setup_github.sh "christineye88@outlook.com" "Christine Ye"
 # 5) Install various things Christine needs
 uv run python -m ipykernel install --user --name "venv"
 export HF_HOME="/workspace/.cache/huggingface"
-uv pip install "trl[vllm]" deepspeed
+uv pip install "trl[vllm]" deepspeed hf-transfer
 uv pip install inspect-ai
 uv pip install dotenv wandb

@@ -31,3 +31,4 @@ uv run python -m ipykernel install --user --name "venv"
 export HF_HOME="/workspace/.cache/huggingface"
 uv pip install "trl[vllm]"
 uv pip install inspect-ai
+uv pip install dotenv wandb

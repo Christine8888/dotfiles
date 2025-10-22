@@ -30,5 +30,5 @@ echo ./scripts/setup_github.sh "christineye88@outlook.com" "Christine Ye"
 uv run python -m ipykernel install --user --name "venv"
 export HF_HOME="/workspace/.cache/huggingface"
 uv pip install "trl[vllm]" deepspeed hf-transfer
-uv pip install inspect-ai liger-kernel
+uv pip install inspect-ai liger-kernel flashinfer-python
 uv pip install dotenv wandb

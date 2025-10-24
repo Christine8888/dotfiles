@@ -32,3 +32,4 @@ export HF_HOME="/workspace/.cache/huggingface"
 uv pip install "trl[vllm]" deepspeed hf-transfer
 uv pip install inspect-ai liger-kernel flashinfer-python
 uv pip install dotenv wandb
+uv pip install psutil nvidia-ml-py3 pynvml

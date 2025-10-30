@@ -14,7 +14,7 @@ git config pull.rebase false
 
 # 1) Setup SSH key
 ssh-keygen -t ed25519 -C "$email"
-cat /root/.ssh/id_ed25519.pub
+cat ~/.ssh/id_ed25519.pub
 read -p "Have you added the SSH key to https://github.com/settings/keys? (y/Y/yes to continue): " response
 while [[ ! "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; do
     read -p "Please type 'y', 'Y', or 'yes' after adding the SSH key: " response
